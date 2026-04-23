@@ -40,3 +40,7 @@ function App() {
 }
 
 export default App;
+import Reports from './pages/Reports';
+
+// Routes ke andar:
+<Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />

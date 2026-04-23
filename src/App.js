@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Patients from './pages/Patients';
 import Doctors from './pages/Doctors';
 import Appointments from './pages/Appointments';
+import Reports from './pages/Reports';
 
 function PrivateRoute({ children }) {
   const [user, setUser] = useState(undefined);
@@ -34,13 +35,10 @@ function App() {
         <Route path="/patients" element={<PrivateRoute><Patients /></PrivateRoute>} />
         <Route path="/doctors" element={<PrivateRoute><Doctors /></PrivateRoute>} />
         <Route path="/appointments" element={<PrivateRoute><Appointments /></PrivateRoute>} />
+        <Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-import Reports from './pages/Reports';
-
-// Routes ke andar:
-<Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />

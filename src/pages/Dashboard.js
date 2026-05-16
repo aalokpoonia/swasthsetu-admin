@@ -172,13 +172,23 @@ export default function Dashboard() {
                     <div style={{ fontSize: 11, color: "#9ca3af", marginTop: 2 }}>{user?.email}</div>
                   </div>
                   <div style={{ padding: "6px 0" }}>
-                    {["👤  My Profile", "⚙️  Settings"].map(item => (
-                      <div key={item} style={{ padding: "9px 16px", fontSize: 13, color: "#374151", cursor: "pointer" }}
-                        onMouseEnter={e => e.target.style.background = "#f9fafb"}
-                        onMouseLeave={e => e.target.style.background = "transparent"}>
-                        {item}
-                      </div>
-                    ))}
+                    <div
+  onClick={() => navigate("/profile")}
+  style={{ padding: "9px 16px", fontSize: 13, color: "#374151", cursor: "pointer" }}
+  onMouseEnter={e => e.target.style.background = "#f9fafb"}
+  onMouseLeave={e => e.target.style.background = "transparent"}
+>
+  👤 My Profile
+</div>
+
+<div
+  onClick={() => navigate("/settings")}
+  style={{ padding: "9px 16px", fontSize: 13, color: "#374151", cursor: "pointer" }}
+  onMouseEnter={e => e.target.style.background = "#f9fafb"}
+  onMouseLeave={e => e.target.style.background = "transparent"}
+>
+  ⚙️ Settings
+</div>
                     <div style={{ height: 1, background: "#e5e7eb", margin: "4px 0" }} />
                     <div style={{ padding: "9px 16px", fontSize: 13, color: "#ef4444", cursor: "pointer" }}
                       onClick={() => signOut(auth).then(() => navigate("/"))}

@@ -8,6 +8,8 @@ import Patients from './pages/Patients';
 import Doctors from './pages/Doctors';
 import Appointments from './pages/Appointments';
 import Reports from './pages/Reports';
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
 function PrivateRoute({ children }) {
   const [user, setUser] = useState(undefined);
@@ -36,6 +38,8 @@ function App() {
         <Route path="/doctors" element={<PrivateRoute><Doctors /></PrivateRoute>} />
         <Route path="/appointments" element={<PrivateRoute><Appointments /></PrivateRoute>} />
         <Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

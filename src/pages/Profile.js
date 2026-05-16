@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-100 flex">
       
@@ -10,29 +13,46 @@ const Profile = () => {
         <p className="text-gray-400 text-sm mt-1">Healthcare Admin</p>
 
         <div className="mt-10 space-y-3">
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Dashboard
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/patients")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Patients
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/doctors")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Doctors
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/appointments")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Appointments
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/reports")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Reports
           </button>
 
           <button className="w-full text-left px-4 py-3 rounded-lg bg-emerald-600">
             My Profile
           </button>
+
         </div>
       </div>
 
@@ -63,7 +83,6 @@ const Profile = () => {
 
           </div>
 
-          {/* Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
 
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
@@ -85,7 +104,6 @@ const Profile = () => {
 
           </div>
 
-          {/* About */}
           <div className="mt-10">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               About Admin

@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-100 flex">
 
@@ -12,29 +15,46 @@ const Settings = () => {
         </p>
 
         <div className="mt-10 space-y-3">
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Dashboard
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/patients")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Patients
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/doctors")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Doctors
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/appointments")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Appointments
           </button>
 
-          <button className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800">
+          <button
+            onClick={() => navigate("/reports")}
+            className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800"
+          >
             Reports
           </button>
 
           <button className="w-full text-left px-4 py-3 rounded-lg bg-emerald-600">
             Settings
           </button>
+
         </div>
       </div>
 
@@ -51,7 +71,6 @@ const Settings = () => {
             Manage your account preferences and security settings.
           </p>
 
-          {/* Form */}
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <div>

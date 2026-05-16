@@ -28,21 +28,16 @@ export default function LoginPage() {
     <div style={{ display: "flex", minHeight: "100vh", fontFamily: "'Segoe UI', sans-serif" }}>
 
       {/* Left Panel */}
-      <div style={{
-        width: "42%", background: "#0f172a", display: "flex",
-        flexDirection: "column", justifyContent: "space-between",
-        padding: "44px 48px", position: "relative", overflow: "hidden"
-      }}>
-        {/* Subtle circles */}
-        <div style={{ position: "absolute", top: -100, right: -100, width: 320, height: 320, borderRadius: "50%", background: "rgba(14,165,233,0.07)" }} />
-        <div style={{ position: "absolute", bottom: -80, left: -80, width: 260, height: 260, borderRadius: "50%", background: "rgba(14,165,233,0.05)" }} />
+      <div style={{ width: "42%", background: "#0f172a", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "44px 48px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: -100, right: -100, width: 320, height: 320, borderRadius: "50%", background: "rgba(255,255,255,0.03)" }} />
+        <div style={{ position: "absolute", bottom: -80, left: -80, width: 260, height: 260, borderRadius: "50%", background: "rgba(255,255,255,0.02)" }} />
 
-        {/* Top - Logo */}
+        {/* Logo */}
         <div style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 52 }}>
-            <div style={{ background: "#0ea5e9", borderRadius: 10, width: 38, height: 38, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🏥</div>
+            <div style={{ background: "#1e293b", border: "1px solid #334155", borderRadius: 10, width: 38, height: 38, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🏥</div>
             <div>
-              <div style={{ color: "white", fontWeight: 700, fontSize: 17, letterSpacing: "-0.3px" }}>SwasthSetu</div>
+              <div style={{ color: "white", fontWeight: 700, fontSize: 17 }}>SwasthSetu</div>
               <div style={{ color: "#475569", fontSize: 11 }}>Healthcare Management</div>
             </div>
           </div>
@@ -55,7 +50,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Middle - Feature list */}
+        {/* Feature list */}
         <div style={{ position: "relative", zIndex: 1 }}>
           {[
             { icon: "👤", text: "Patient records with real-time updates" },
@@ -64,7 +59,7 @@ export default function LoginPage() {
             { icon: "📊", text: "Analytics and reports dashboard" },
           ].map((f, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ width: 34, height: 34, background: "rgba(14,165,233,0.1)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, flexShrink: 0 }}>{f.icon}</div>
+              <div style={{ width: 34, height: 34, background: "#1e293b", border: "1px solid #334155", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, flexShrink: 0 }}>{f.icon}</div>
               <span style={{ color: "#94a3b8", fontSize: 13 }}>{f.text}</span>
             </div>
           ))}
@@ -86,7 +81,7 @@ export default function LoginPage() {
           </div>
 
           {error && (
-            <div style={{ background: "#fef2f2", border: "1px solid #fecaca", color: "#dc2626", padding: "10px 14px", borderRadius: 8, marginBottom: 20, fontSize: 13, display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "#fef2f2", border: "1px solid #fecaca", color: "#dc2626", padding: "10px 14px", borderRadius: 8, marginBottom: 20, fontSize: 13 }}>
               ⚠️ {error}
             </div>
           )}
@@ -101,7 +96,7 @@ export default function LoginPage() {
                 onChange={e => setEmail(e.target.value)}
                 required
                 style={{ width: "100%", padding: "11px 14px", border: "1.5px solid #e2e8f0", borderRadius: 8, fontSize: 14, boxSizing: "border-box", outline: "none", background: "white", color: "#0f172a" }}
-                onFocus={e => e.target.style.borderColor = "#0ea5e9"}
+                onFocus={e => e.target.style.borderColor = "#0f172a"}
                 onBlur={e => e.target.style.borderColor = "#e2e8f0"}
               />
             </div>
@@ -116,7 +111,7 @@ export default function LoginPage() {
                   onChange={e => setPassword(e.target.value)}
                   required
                   style={{ width: "100%", padding: "11px 44px 11px 14px", border: "1.5px solid #e2e8f0", borderRadius: 8, fontSize: 14, boxSizing: "border-box", outline: "none", background: "white", color: "#0f172a" }}
-                  onFocus={e => e.target.style.borderColor = "#0ea5e9"}
+                  onFocus={e => e.target.style.borderColor = "#0f172a"}
                   onBlur={e => e.target.style.borderColor = "#e2e8f0"}
                 />
                 <button type="button" onClick={() => setShowPass(!showPass)}
@@ -127,7 +122,7 @@ export default function LoginPage() {
             </div>
 
             <button type="submit" disabled={loading}
-              style={{ width: "100%", padding: "12px 0", background: loading ? "#94a3b8" : "#0ea5e9", color: "white", border: "none", borderRadius: 8, fontWeight: 700, fontSize: 15, cursor: loading ? "not-allowed" : "pointer", letterSpacing: "0.2px" }}>
+              style={{ width: "100%", padding: "12px 0", background: loading ? "#94a3b8" : "#0f172a", color: "white", border: "none", borderRadius: 8, fontWeight: 700, fontSize: 15, cursor: loading ? "not-allowed" : "pointer" }}>
               {loading ? "Signing in..." : "Sign in →"}
             </button>
           </form>

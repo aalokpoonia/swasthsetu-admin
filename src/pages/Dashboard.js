@@ -8,6 +8,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
+  const [showNotif, setShowNotif] = useState(false);
   const [stats, setStats] = useState({ patients: 0, doctors: 0, appointments: 0, beds: 124 });
   const [recentPatients, setRecentPatients] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -139,12 +140,186 @@ export default function Dashboard() {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            {/* Notification Bell */}
-            <div style={{ position: "relative", cursor: "pointer" }} onClick={() => alert("No new notifications")}>
-              <span style={{ fontSize: 20 }}>🔔</span>
-              <div style={{ position: "absolute", top: -4, right: -4, width: 18, height: 18, background: "#ef4444", borderRadius: "50%", border: "2px solid white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "white" }}>3</div>
+           {/* Notification Bell */}
+<div style={{ position: "relative" }}>
+
+  <div
+    onClick={() => setShowNotif(!showNotif)}
+    style={{ position: "relative", cursor: "pointer" }}
+  >
+    <span style={{ fontSize: 20 }}>🔔</span>
+
+    <div
+      style={{
+        position: "absolute",
+        top: -4,
+        right: -4,
+        width: 18,
+        height: 18,
+        background: "#ef4444",
+        borderRadius: "50%",
+        border: "2px solid white",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 9,
+        fontWeight: 700,
+        color: "white",
+      }}
+    >
+      3
+    </div>
+  </div>
+
+  {showNotif && (
+    <div
+      style={{
+        position: "absolute",
+        top: 44,
+        right: 0,
+        width: 300,
+        background: "white",
+        borderRadius: 10,
+        boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
+        border: "1px solid #e5e7eb",
+        zIndex: 100,
+        overflow: "hidden",
+      }}
+    >
+
+      <div
+        style={{
+          padding: "14px 16px",
+          borderBottom: "1px solid #e5e7eb",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <span
+          style={{
+            fontWeight: 700,
+            fontSize: 14,
+            color: "#111827",
+          }}
+        >
+          Notifications
+        </span>
+
+        <span
+          style={{
+            fontSize: 11,
+            color: "#10b981",
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          Mark all read
+        </span>
+      </div>
+
+      {[
+        {
+          icon: "👤",
+          title: "New patient admitted",
+          desc: "Rahul Sharma — Cardiology",
+          time: "2 min ago",
+        },
+        {
+          icon: "📅",
+          title: "Appointment scheduled",
+          desc: "Dr. Mehta — 3:00 PM today",
+          time: "15 min ago",
+        },
+        {
+          icon: "👨‍⚕️",
+          title: "New doctor registered",
+          desc: "Dr. Priya Singh — Neurology",
+          time: "1 hr ago",
+        },
+      ].map((n, i) => (
+        <div
+          key={i}
+          style={{
+            padding: "12px 16px",
+            borderBottom: "1px solid #f3f4f6",
+            display: "flex",
+            gap: 12,
+            cursor: "pointer",
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.background = "#f9fafb")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.background = "white")
+          }
+        >
+
+          <div
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: "50%",
+              background: "#f3f4f6",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 16,
+              flexShrink: 0,
+            }}
+          >
+            {n.icon}
+          </div>
+
+          <div>
+            <div
+              style={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: "#111827",
+              }}
+            >
+              {n.title}
             </div>
 
+            <div
+              style={{
+                fontSize: 12,
+                color: "#6b7280",
+                marginTop: 2,
+              }}
+            >
+              {n.desc}
+            </div>
+
+            <div
+              style={{
+                fontSize: 11,
+                color: "#9ca3af",
+                marginTop: 3,
+              }}
+            >
+              {n.time}
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <div
+        style={{
+          padding: "10px 16px",
+          textAlign: "center",
+          fontSize: 12,
+          color: "#10b981",
+          fontWeight: 600,
+          cursor: "pointer",
+        }}
+      >
+        View all notifications
+      </div>
+
+    </div>
+  )}
+</div>
             {/* Profile Avatar */}
             <div style={{ position: "relative" }}>
               <div onClick={() => setShowProfile(!showProfile)}

@@ -213,7 +213,33 @@ export default function Dashboard() {
             cursor: "pointer",
           }}
         >
-          Mark all read
+          <div
+  onClick={() => alert("Opening all notifications...")}
+  style={{
+    padding: "10px 16px",
+    textAlign: "center",
+    fontSize: 12,
+    color: "#10b981",
+    fontWeight: 600,
+    cursor: "pointer"
+  }}
+>
+  <div
+  onClick={() => alert("All notifications marked as read")}
+  style={{
+    padding: "10px 16px",
+    textAlign: "center",
+    fontSize: 12,
+    color: "#10b981",
+    fontWeight: 600,
+    cursor: "pointer",
+    borderBottom: "1px solid #f3f4f6"
+  }}
+>
+  Mark all read
+</div>
+  View all notifications
+</div>
         </span>
       </div>
 

@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react) ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify)
+# 🏥 SwasthSetu — Healthcare Administration Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack healthcare administration dashboard for managing patients, appointments, staff, and medical records — built with React.js and Firebase, featuring role-based access control and real-time data synchronization.
 
-## Available Scripts
+🔗 **Live Demo:** [swasthsetu-admin.netlify.app](https://swasthsetu-admin.netlify.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📋 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+SwasthSetu is a healthcare management system designed to streamline day-to-day hospital administration through a centralized dashboard. It enables secure, role-based management of patients, appointments, and staff records, with real-time data synced through Firebase Firestore.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## 📸 Screenshots
 
-### `npm test`
+| Dashboard | Patient Management |
+|---|---|
+| ![Dashboard](./screenshots/dashboard.png) | ![Patients](./screenshots/patients.png) |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Appointments | Analytics |
+|---|---|
+| ![Appointments](./screenshots/appointments.png) | ![Analytics](./screenshots/analytics.png) |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✨ Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🔐 **Firebase Authentication** — secure admin login and session management
+- 🛡️ **Role-Based Access Control (RBAC)** — different access levels for different admin roles
+- 👥 **Patient Management** — add, view, update, and track patient records
+- 📅 **Appointment Tracking** — schedule and manage patient appointments
+- ☁️ **Real-Time CRUD** — instant data sync across the dashboard using Cloud Firestore
+- 📊 **Interactive Analytics** — Chart.js visualizations for patient distribution, appointment trends, and daily hospital operations
+- 📱 **Responsive UI** — built with Tailwind CSS for a clean, mobile-friendly interface
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠 Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Category | Technology |
+|---|---|
+| Frontend | React.js, Tailwind CSS |
+| Backend / Auth | Firebase Authentication |
+| Database | Cloud Firestore |
+| Data Visualization | Chart.js |
+| Deployment | Netlify |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
+- Node.js (v16+)
+- A Firebase project with Authentication and Firestore enabled
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/aalokpoonia/swasthsetu-admin.git
+cd swasthsetu-admin
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Environment Setup
 
-### Code Splitting
+Create a `.env` file in the root directory with your Firebase config:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Run Locally
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Visit `http://localhost:3000` in your browser.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Project Structure
 
-### Deployment
+```
+swasthsetu-admin/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── firebase/
+│   ├── context/
+│   └── App.js
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔮 Future Improvements
+
+- Bed/ward availability tracking
+- Doctor scheduling module
+- Prescription and medical records management
+- Notifications for upcoming appointments
+
+---
+
+## 👤 Author
+
+**Aalok Poonia**
+📧 aalokpoonia.work@gmail.com · 🌐 [GitHub](https://github.com/aalokpoonia) · 💼 [LinkedIn](https://linkedin.com/in/aalokpoonia)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
